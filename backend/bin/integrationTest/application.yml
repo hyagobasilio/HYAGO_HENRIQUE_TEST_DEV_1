@@ -1,5 +1,7 @@
 ---
 grails:
+    cors:
+        enable: true
     profile: web
     codegen:
         defaultPackage: backend

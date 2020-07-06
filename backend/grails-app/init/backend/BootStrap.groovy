@@ -17,11 +17,11 @@ class BootStrap {
         def startDay = LocalDate.now().minusDays(2)
 		startDay.datesUntil(LocalDate.now()).forEach { data -> 
 			
-			double randomValue = 1 + (100 - 1) * r.nextDouble();
 			def startHour = data.atTime(10, 0)
 			def endHour = data.atTime(18, 0)
 			
 			while(startHour.compareTo(endHour) < 1) {
+				double randomValue = (1 + (100 - 1) * r.nextDouble()).trunc(2);
 				println randomValue
 				println startHour
 				Date datahora = Date.from(startHour.atZone(ZoneId.of("America/Sao_Paulo")).toInstant());

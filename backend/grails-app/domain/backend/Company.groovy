@@ -12,4 +12,8 @@ class Company {
         name blank:false
         segment blank:false
     }
+	
+	static mapping = {
+        stocks fetch: 'join'
+    }
 }

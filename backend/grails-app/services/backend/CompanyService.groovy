@@ -1,4 +1,4 @@
-package backend
+ package backend
 
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -10,7 +10,7 @@ import grails.gorm.transactions.Transactional
 class CompanyService {
 
     def listAll() {
-        Company.list()
+       Company.list()
     }
 	
     def save(Company company) {

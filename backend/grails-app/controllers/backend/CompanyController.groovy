@@ -3,20 +3,29 @@ package backend
 import java.time.LocalDate
 import java.time.ZoneId
 
+import org.springframework.web.bind.annotation.CrossOrigin
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
+
 import grails.converters.JSON
 
+@RestController
+@RequestMapping("company")
 class CompanyController {
 
     CompanyService companyService
 	StockService stockService
 	
     
-    static responseFormats = ['json']
-
+    //static responseFormats = ['json']
+	@CrossOrigin(origins = "*")
+	@GetMapping
     def index() {
-        def results = companyService.listAll()
-        
-        render(text: results as JSON, contentType: 'application/json', encoding: 'UTF-8')
+        def companies = companyService.listAll()
+		JSON.use('deep')
+        render(text: companies as JSON, contentType: 'application/json', encoding: 'UTF-8')
+		
     }
 	
 	def stock() {
