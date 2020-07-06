@@ -14,7 +14,7 @@ class BootStrap {
 		
 		Random r = new Random()
 		
-        def startDay = LocalDate.now().minusDays(2)
+        def startDay = LocalDate.now().minusDays(30)
 		startDay.datesUntil(LocalDate.now()).forEach { data -> 
 			
 			def startHour = data.atTime(10, 0)

@@ -23,7 +23,6 @@ export class AppComponent  {
   getCompanies() {
     this.companiesService.getCompanies().subscribe(result => {
       this.companies = result;
-      console.log(result)
     })
   }
 }

@@ -11,9 +11,8 @@ class CompanySpec extends Specification implements DomainUnitTest<Company> {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "test save"() {
+        
     }
 	
 }
