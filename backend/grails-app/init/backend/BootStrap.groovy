@@ -22,8 +22,6 @@ class BootStrap {
 			
 			while(startHour.compareTo(endHour) < 1) {
 				double randomValue = (1 + (100 - 1) * r.nextDouble()).trunc(2);
-				println randomValue
-				println startHour
 				Date datahora = Date.from(startHour.atZone(ZoneId.of("America/Sao_Paulo")).toInstant());
 				stockService.save(
 					new Stock(price: randomValue, priceDate: datahora, company: company1)
